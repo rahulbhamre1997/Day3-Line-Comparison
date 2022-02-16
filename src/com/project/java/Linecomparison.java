@@ -1,8 +1,10 @@
 package com.project.java;
+
 import java.util.Scanner;
+
 public class Linecomparison {
 	public static double lineValues() {
-		try (Scanner sc = new Scanner(System.in)) {
+		 Scanner sc = new Scanner(System.in);
 			double x1,x2,y1,y2;
 			
 				System.out.println("Enter Values For First Point");
@@ -15,14 +17,31 @@ public class Linecomparison {
 			
 				double lineLength = (double) Math.sqrt( Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
 				return lineLength;
-			}	
+		 	}	
+		
+		public static void checkEquality(double lineOneLength , double lineTwoLength ) {
+			if(lineOneLength == lineTwoLength ) {
+				System.out.println("Lines are Equal");
 		}
+			else {
+				System.out.println("Lines are not Equal");
+		}
+	}
 
+	
+	
+	
 	public static void main(String[] args) {
 		System.out.println("Welcome to Line Comparison Computation ");
-		double lineLength = lineValues();
-		System.out.println("Length Of Line is: " + lineLength);
 		
+		double lineOneLength = lineValues();
+			System.out.println("Length Of Line1 is: " + lineOneLength);
+		
+		double lineTwoLength = lineValues();
+			System.out.println("Length Of Line2 is: " + lineTwoLength);
+		
+			checkEquality(lineOneLength , lineTwoLength);
 	}
+
 	
 }
